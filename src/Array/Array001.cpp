@@ -3,6 +3,7 @@ using namespace std;
 #define MAX 100
 void nhap(int a[],int &n);
 void xuat(int a[],int n);
+void lietKeChan(int a[],int n);
 int main(){
     // khai bao
     int a[MAX];
@@ -11,6 +12,7 @@ int main(){
     nhap(a,n);
     // xuat mang
     xuat(a,n);
+    lietKeChan(a,n);
     return 0;
 }
 void nhap(int a[],int &n){
@@ -25,4 +27,11 @@ void xuat(int a[],int n){
         cout<<a[i]<<" ";
     }
     cout<<endl;
+}
+void lietKeChan(int a[],int n){
+    for(int i=0;i<n;i++){
+        if(a[i]%2==0){
+            cout<<a[i]<<" ";
+        }
+    }
 }
