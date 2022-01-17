@@ -1,0 +1,1 @@
+{"name":"Local: SoDoiXung","url":"d:\\Code\\src\\loop\\SoDoiXung.cpp","tests":[{"id":1641569377068,"input":"1233321","output":"TRUE"},{"id":1641569444480,"input":"121121","output":"TRUE"},{"id":1641569463968,"input":"123456","output":"FALSE"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\src\\loop\\SoDoiXung.cpp","group":"local","local":true}
