@@ -5,16 +5,20 @@ void nhap(int a[],int &n);
 void xuat(int a[],int n);
 void lietKeChan(int a[],int n);
 void lietKeLe(int a[],int n);
+int demChan(int a[],int n);
 int main(){
     // khai bao
     int a[MAX];
     int n;
+    int dem = 0;
     // nhap mang
     nhap(a,n);
     // xuat mang
     xuat(a,n);
     lietKeChan(a,n);
     lietKeLe(a,n);
+    dem = demChan(a,n);
+    cout<<dem;
     return 0;
 }
 void nhap(int a[],int &n){
@@ -44,4 +48,13 @@ void lietKeLe(int a[],int n){
             cout<<a[i]<<" ";
         }
     }
+}
+int demChan(int a[],int n){
+    int dem = 0;
+    for(int i=0;i<n;i++){
+        if(a[i]%2==0){
+            dem++;
+        }
+    }
+    return dem;
 }
