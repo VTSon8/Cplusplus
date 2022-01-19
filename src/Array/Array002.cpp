@@ -9,6 +9,7 @@ void xuatMang(int a[],int &n);// khai bao ham xuat
 bool laSoChinhPhuong(int a);// khai bao ham kiem tra so chinh phuong
 void lietKeSoChinhPhuong(int a[],int n); // khai bao ham liet ke so chinh phuong
 bool tonTaiSoChinhPhuong(int a[],int n);// khai bao ham ton tai so chinh phuong
+int demSoChinhPhuong(int a[],int n);// khai bao ham dem so chinh phuong
 int main(){
     int mang[MAX];
     int n;
@@ -16,13 +17,14 @@ int main(){
     xuatMang(mang,n);// goi ham xuat mang
     lietKeSoChinhPhuong(mang,n);
     if(tonTaiSoChinhPhuong(mang,n)){
-        lietKeSoChinhPhuong(mang,n);
         cout<<"Mang ton tai so chinh phuong";
         cout<<endl;
     }
     else{
         cout<<"Mang khong ton tai so chinh phuong";
     }
+    // dem so luong so chinh phuong
+    cout<<"So luong so chinh phuong: "<<demSoChinhPhuong(mang,n);
     return 0;
 }
 void nhapMang(int a[],int &n){// xay dung ham nhap
@@ -61,4 +63,13 @@ bool tonTaiSoChinhPhuong(int a[],int n){// xay dung ham kiem tra ton tai so chin
         }
     }
     return tontai;
+}
+int demSoChinhPhuong(int a[],int n){
+    int dem = 0;
+    for(int i=0;i<n;i++){
+        if(laSoChinhPhuong(a[i])){
+            dem++;
+        }
+    }
+    return dem;
 }
