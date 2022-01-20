@@ -57,9 +57,6 @@ bool laSoNguyenTo(int a){// xay dung ham kiem tra so nguyen to
             lasonguyento = false;
             break;
         }
-        else{
-            lasonguyento = false;
-        }
     }
     return lasonguyento;    
 }
