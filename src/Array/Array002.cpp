@@ -3,7 +3,7 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
-#define MAX 50
+#define MAX 50 // suc chua toi da
 void nhapMang(int a[],int &n);// khai bao ham nhap
 void xuatMang(int a[],int &n);// khai bao ham xuat
 bool laSoChinhPhuong(int a);// khai bao ham kiem tra so chinh phuong
@@ -26,7 +26,7 @@ int main(){
         cout<<"Mang khong ton tai so chinh phuong";
     }
     // dem so luong so chinh phuong
-    cout<<"So luong so chinh phuong: "<<demSoChinhPhuong(mang,n);
+    cout<<"So luong so chinh phuong: "<<demSoChinhPhuong(mang,n)<<endl;
     // goi ham liet ke so nguyen to
     lietKeSoNguyenTo(mang,n);
     return 0;
@@ -52,13 +52,16 @@ bool laSoChinhPhuong(int a){ //xay dung ham kiem tra so chinh phuong
 }
 bool laSoNguyenTo(int a){// xay dung ham kiem tra so nguyen to
     bool lasonguyento = false;
+    if(a<2)
+    {
+        return false;
+    }
     for(int i=2;i<a;i++){
         if(a%i==0){
-            lasonguyento = false;
-            break;
+            return false;
         }
     }
-    return lasonguyento;    
+    return true;
 }
 void lietKeSoChinhPhuong(int a[],int n){ // xay dung ham liet ke so chinh phuong
     for(int i=0;i<n;i++){
