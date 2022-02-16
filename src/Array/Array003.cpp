@@ -7,6 +7,7 @@ int tanSuat(int a[], int n, int x);
 void tangDan(int a[],int n);
 void tangDanDuong(int a[],int n);
 void giamDan(int a[],int n);
+void giamDanAm(int a[],int n);
 int main(){
     int a[MAX];
     int n;
@@ -16,9 +17,12 @@ int main(){
     xuatMang(a,n);
     cout<<endl;
     cout<<"so "<<x<<" xuat hien "<<tanSuat(a,n,x)<<" lan"<<endl;
-    tangDan(a,n);
-    cout<<endl;
-    giamDan(a,n);
+    // tangDan(a,n);
+    // cout<<endl;
+    // giamDan(a,n);
+    // tangDanDuong(a,n);
+    giamDanAm(a,n);
+    xuatMang(a,n);
     return 0;
 }
 void nhapMang(int a[], int &n){
@@ -63,7 +67,6 @@ void tangDan(int a[],int n){
             }
         }
     }
-    xuatMang(a,n);
 }
 void giamDan(int a[],int n){
     for(int i=0;i<n-1;i++){
@@ -75,8 +78,26 @@ void giamDan(int a[],int n){
             }
         }
     }
-    xuatMang(a,n);
 }
 void tangDanDuong(int a[],int n){
-
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]>a[j]&&a[i]>0&&a[j]>0){
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+}
+void giamDanAm(int a[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]<a[j]&&a[i]<0&&a[j]<0){
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
 }
