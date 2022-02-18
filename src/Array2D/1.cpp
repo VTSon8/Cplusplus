@@ -11,11 +11,13 @@
 using namespace std;
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n);
 void xuat(int a[MAX_ROW][MAX_COL],int m,int n);
+int max(int a[MAX_ROW][MAX_COL],int m,int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
     nhap(a,m,n);
     xuat(a,m,n);
+    max(a,m,n);
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
@@ -35,4 +37,18 @@ void xuat(int a[MAX_ROW][MAX_COL],int m,int n){
             cout<<a[i][j]<<" ";
         }
         cout<<endl;
+    }
+}
+int max(int a[MAX_ROW][MAX_COL],int m,int n){
+    int max = a[0][0];// phần tử đầu tiên làm max
+    // tìm max
+    cout<<"Phan tu lon nhat cua mang la: ";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(max<a[i][j]){
+                max = a[i][j];
+            }
+        }
+    }
+    return max;
 }
