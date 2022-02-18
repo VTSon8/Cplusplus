@@ -12,12 +12,14 @@ using namespace std;
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n);
 void xuat(int a[MAX_ROW][MAX_COL],int m,int n);
 int max(int a[MAX_ROW][MAX_COL],int m,int n);
+int min(int a[MAX_ROW][MAX_COL],int m,int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
     nhap(a,m,n);
     xuat(a,m,n);
-    max(a,m,n);
+    cout<<max(a,m,n);
+    cout<<min(a,m,n);
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
@@ -51,4 +53,16 @@ int max(int a[MAX_ROW][MAX_COL],int m,int n){
         }
     }
     return max;
+}
+int min(int a[MAX_ROW][MAX_COL],int m,int n){
+    int min = a[0][0];
+    cout<<"Phan tu nho nhat cua mang la: ";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(min>a[i][j]){
+                min = a[i][j];
+            }
+        }
+    }
+    return min;
 }
