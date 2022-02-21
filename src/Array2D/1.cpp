@@ -24,6 +24,7 @@ int minDuongCheoChinh(int a[MAX_ROW][MAX_COL],int m, int n);
 int minDuongCheoPhu(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongHangLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongCotNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
+int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
@@ -41,6 +42,7 @@ int main(){
     cout<<"Min duong cheo phu: "<<minDuongCheoPhu(a,m,n)<<endl;
     cout<<"Tong hang lon nhat: "<<tongHangLonNhat(a,m,n)<<endl;
     cout<<"Tong cot nho nhat: "<<tongCotNhoNhat(a,m,n)<<endl;
+    cout<<"Tong hang nho nhat: "<<tongHangNhoNhat(a,m,n)<<endl;
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
@@ -173,6 +175,24 @@ int tongCotNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n){
             s = s + a[i][j];
         }
         if(j==0){
+            min = s;
+        }
+        else{
+            if(s<min){
+                min = s;
+            }
+        }
+    }
+    return min;
+}
+int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n){
+    int min;
+    for(int i=0;i<m;i++){
+        int s = 0;
+        for(int j=0;j<n;j++){
+            s = s + a[i][j];
+        }
+        if(i==0){
             min = s;
         }
         else{
