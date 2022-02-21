@@ -25,6 +25,7 @@ int minDuongCheoPhu(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongHangLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongCotNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
+int tongCotLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
@@ -202,4 +203,22 @@ int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n){
         }
     }
     return min;
+}
+int tongCotLonNhat(int a[MAX_ROW][MAX_COL],int m, int n){
+    int max;
+    for(int j=0;j<n;j++){
+        int s = 0;
+        for(int i=0;i<m;i++){
+            s = s + a[i][j];
+        }
+        if(j==0){
+            max = s;
+        }
+        else{
+            if(s<max){
+                max = s;
+            }
+        }
+    }
+    return max;
 }
