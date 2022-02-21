@@ -21,6 +21,7 @@ int maxCot(int a[MAX_ROW][MAX_COL],int m, int n, int col);
 int maxDuongCheoChinh(int a[MAX_ROW][MAX_COL],int m, int n);
 int maxDuongCheoPhu(int a[MAX_ROW][MAX_COL],int m, int n);
 int minDuongCheoChinh(int a[MAX_ROW][MAX_COL],int m, int n);
+int minDuongCheoPhu(int a[MAX_ROW][MAX_COL],int m, int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
@@ -35,6 +36,7 @@ int main(){
     cout<<"Max duong cheo chinh: "<<maxDuongCheoChinh(a,m,n)<<endl;
     cout<<"Max duong cheo phu: "<<maxDuongCheoPhu(a,m,n)<<endl;
     cout<<"Min duong cheo chinh: "<<minDuongCheoChinh(a,m,n)<<endl;
+    cout<<"Min duong cheo phu: "<<minDuongCheoPhu(a,m,n)<<endl;
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
@@ -125,6 +127,17 @@ int minDuongCheoChinh(int a[MAX_ROW][MAX_COL],int m, int n){
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             if(i==j && min>a[i][j]){
+                min = a[i][j];
+            }
+        }
+    }
+    return min;
+}
+int minDuongCheoPhu(int a[MAX_ROW][MAX_COL],int m, int n){
+    int min = a[0][n-1];
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(min>a[i][j] && i+j==m-1){
                 min = a[i][j];
             }
         }
