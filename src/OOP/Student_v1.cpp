@@ -18,6 +18,18 @@ class Student{// Animal, People,..
             this->name = name;
             this->gpa = gpa;
         }
+        void setId(int id){
+            this->id = id;
+        }
+        int getId(){
+            return id;
+        }
+        void setName(string name){
+            this->name = name;
+        }
+        string getName(){
+            return name;
+        }
         print(){
             cout<<"id: "<<id<<", name: "<<name <<", gpa: "<<gpa<<endl;
         }
@@ -25,7 +37,10 @@ class Student{// Animal, People,..
 int main(){
     Student minh;// khởi tạo 1 object là student
     Student nam = Student(2,"Nam",4.3);// gọi hàm khởi tạo có đối số
+    minh.setId(5);
+    cout<<minh.getId()<<endl;
+    minh.setName("son");
+    cout<<minh.getName()<<endl;
     minh.print();// gọi hàm print
     nam.print();// gọi hàm xuât thông tin của nam
-
 }

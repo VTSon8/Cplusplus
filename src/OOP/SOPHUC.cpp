@@ -32,7 +32,7 @@ int main(){
     soPhuc.setPhanThuc(10);
     soPhuc.setPhanAo(5);
     cout<<soPhuc.getPhanThuc()<<endl;
-    cout<<soPhuc.getPhanAo();
+    cout<<soPhuc.getPhanAo()<<endl;
     soPhuc.print();
     return 0;
 }
