@@ -11,7 +11,7 @@ class Phanso{
             mauso = 6;
         };
         print(){
-            cout<<"Tu so: "<<tuso<<"Mau so: "<<mauso<<endl;
+            cout<<"Tu so: "<<tuso<<" Mau so: "<<mauso<<endl;
             cout<<"Phan so: "<<(float)tuso/mauso; 
         }
 };
