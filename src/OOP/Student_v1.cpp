@@ -30,6 +30,12 @@ class Student{// Animal, People,..
         string getName(){
             return name;
         }
+        void setGPA(float gpa){
+            this->gpa = gpa;
+        }
+        float getGPA(){
+            return gpa;
+        }
         print(){
             cout<<"id: "<<id<<", name: "<<name <<", gpa: "<<gpa<<endl;
         }
@@ -41,6 +47,8 @@ int main(){
     cout<<minh.getId()<<endl;
     minh.setName("son");
     cout<<minh.getName()<<endl;
+    minh.setGPA(9);
+    cout<<minh.getGPA()<<endl;
     minh.print();// gọi hàm print
     nam.print();// gọi hàm xuât thông tin của nam
 }
