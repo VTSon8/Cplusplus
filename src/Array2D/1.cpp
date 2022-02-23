@@ -44,6 +44,7 @@ int main(){
     cout<<"Tong hang lon nhat: "<<tongHangLonNhat(a,m,n)<<endl;
     cout<<"Tong cot nho nhat: "<<tongCotNhoNhat(a,m,n)<<endl;
     cout<<"Tong hang nho nhat: "<<tongHangNhoNhat(a,m,n)<<endl;
+    cout<<"Tong cot lon nhat: "<<tongCotLonNhat(a,m,n)<<endl;
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
