@@ -28,6 +28,8 @@ int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongCotLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int* timGTLNHang(int a[MAX_ROW][MAX_COL],int m, int n);
 int* timGTNNHang(int a[MAX_ROW][MAX_COL],int m, int n);
+int* timGTLNCot(int a[MAX_ROW][MAX_COL],int m, int n);
+int* timGTNNCot(int a[MAX_ROW][MAX_COL],int m, int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
@@ -41,12 +43,24 @@ int main(){
     int* minhang;
     minhang = new int(m);
     minhang = timGTNNHang(a,m,n);
+    int* maxcot;
+    maxcot = new int(n);
+    maxcot = timGTLNCot(a,m,n);
+    int* mincot;
+    mincot = new int(n);
+    mincot = timGTNNCot(a,m,n);
     for(int i=0;i<m;i++){
         cout<<"hang "<<i<<": ";
         cout<<maxhang[i]<<endl;
     }
     for(int i=0;i<m;i++){
         cout<<"hang "<<i<<": "<<minhang[i]<<endl;
+    }
+    for(int i=0;i<n;i++){
+        cout<<"cot "<<i<<": "<<maxcot[i]<<endl;
+    }
+    for(int i=0;i<n;i++){
+        cout<<"cot "<<i<<": "<<mincot[i]<<endl;
     }
     return 0;
 }
@@ -258,6 +272,36 @@ int* timGTNNHang(int a[MAX_ROW][MAX_COL],int m, int n){
         for(int j=0;j<n;j++){
             if(b[i]>a[i][j]){
                 b[i] = a[i][j];
+            }
+        }
+    }
+    return b;
+}
+int* timGTLNCot(int a[MAX_ROW][MAX_COL],int m, int n){
+    int *b;
+    b = new int(n);
+    for(int i=0;i<n;i++){
+        b[i] = a[0][i];
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(b[i]<a[j][i]){
+                b[i] = a[j][i];
+            }
+        }
+    }
+    return b;
+}
+int* timGTNNCot(int a[MAX_ROW][MAX_COL],int m, int n){
+    int *b;
+    b = new int(n);
+    for(int i=0;i<n;i++){
+        b[i] = a[0][i];
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(b[i]>a[j][i]){
+                b[i] = a[j][i];
             }
         }
     }
