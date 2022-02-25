@@ -26,6 +26,8 @@ int tongHangLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongCotNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongHangNhoNhat(int a[MAX_ROW][MAX_COL],int m, int n);
 int tongCotLonNhat(int a[MAX_ROW][MAX_COL],int m, int n);
+int* timGTLNHang(int a[MAX_ROW][MAX_COL],int m, int n);
+int* timGTNNHang(int a[MAX_ROW][MAX_COL],int m, int n);
 int main(){
     int a[MAX_ROW][MAX_COL];
     int m,n;
@@ -33,18 +35,19 @@ int main(){
     int col = 3;
     nhap(a,m,n);
     xuat(a,m,n);
-    cout<<"Max: "<<max(a,m,n)<<endl;
-    cout<<"Min: "<<min(a,m,n)<<endl;
-    cout<<"Max hang: "<<maxHang(a,m,n,row)<<endl;
-    cout<<"Max cot: "<<maxCot(a,m,n,col)<<endl;
-    cout<<"Max duong cheo chinh: "<<maxDuongCheoChinh(a,m,n)<<endl;
-    cout<<"Max duong cheo phu: "<<maxDuongCheoPhu(a,m,n)<<endl;
-    cout<<"Min duong cheo chinh: "<<minDuongCheoChinh(a,m,n)<<endl;
-    cout<<"Min duong cheo phu: "<<minDuongCheoPhu(a,m,n)<<endl;
-    cout<<"Tong hang lon nhat: "<<tongHangLonNhat(a,m,n)<<endl;
-    cout<<"Tong cot nho nhat: "<<tongCotNhoNhat(a,m,n)<<endl;
-    cout<<"Tong hang nho nhat: "<<tongHangNhoNhat(a,m,n)<<endl;
-    cout<<"Tong cot lon nhat: "<<tongCotLonNhat(a,m,n)<<endl;
+    int* maxhang;
+    maxhang = new int(m);
+    maxhang = timGTLNHang(a,m,n);
+    int* minhang;
+    minhang = new int(m);
+    minhang = timGTNNHang(a,m,n);
+    for(int i=0;i<m;i++){
+        cout<<"hang "<<i<<": ";
+        cout<<maxhang[i]<<endl;
+    }
+    for(int i=0;i<m;i++){
+        cout<<"hang "<<i<<": "<<minhang[i]<<endl;
+    }
     return 0;
 }
 void nhap(int a[MAX_ROW][MAX_COL], int &m, int &n){
@@ -222,4 +225,41 @@ int tongCotLonNhat(int a[MAX_ROW][MAX_COL],int m, int n){
         }
     }
     return max;
+}
+// 1 2 3 5
+// 4 3 2 1
+// 2 2 2 1
+// 4 5 3 1
+// 3 2 1 2
+//GTLN: 5 4 2 5 3
+int* timGTLNHang(int a[MAX_ROW][MAX_COL],int m, int n){
+    int *b;// mang b chua cac gia tri lon nhat hang
+    b = new int(m);
+    for(int i=0;i<m;i++){// khoi tao mang
+        b[i] = a[i][0];
+    }
+    // tim max cac hang
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(b[i]<a[i][j]){
+                b[i] = a[i][j];
+            }
+        }
+    }
+    return b;
+}
+int* timGTNNHang(int a[MAX_ROW][MAX_COL],int m, int n){
+    int *b;
+    b = new int(m);
+    for(int i=0;i<m;i++){
+        b[i] = a[i][0];
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(b[i]>a[i][j]){
+                b[i] = a[i][j];
+            }
+        }
+    }
+    return b;
 }
