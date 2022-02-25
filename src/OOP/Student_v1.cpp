@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 class Student{// Animal, People,.. 
     private:// access modifier
@@ -41,14 +42,15 @@ class Student{// Animal, People,..
         }
 };
 int main(){
-    Student minh;// khởi tạo 1 object là student
-    Student nam = Student(2,"Nam",4.3);// gọi hàm khởi tạo có đối số
-    minh.setId(5);
-    cout<<minh.getId()<<endl;
-    minh.setName("son");
-    cout<<minh.getName()<<endl;
-    minh.setGPA(9);
-    cout<<minh.getGPA()<<endl;
-    minh.print();// gọi hàm print
-    nam.print();// gọi hàm xuât thông tin của nam
+    vector<Student> students;   
+    Student minh(1,"Minh",3.4);// khoi tao co tham so
+    Student son(2, "Son", 8.9);
+    Student ngoc(3,"Ngoc",5);
+    students.push_back(minh);
+    students.push_back(son);
+    students.push_back(ngoc);
+    for(Student student: students){
+        student.print();
+    }
+   return 0;
 }

@@ -8,7 +8,7 @@ int main(){
     numbers.push_back(2);// numbers = {1,2}
     numbers.push_back(3);// numbers = {1,2,3}
     // cout<<numbers[2];
-    numbers.pop_back();// loai bo phan tu cuoi
+    // numbers.pop_back();// loai bo phan tu cuoi
     // numbers = {1,2}
     // cout<<numbers.size();
     for(int i=0;i<numbers.size();i++){
