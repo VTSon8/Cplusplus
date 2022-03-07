@@ -11,6 +11,10 @@ class Phanso{
             tuso = 5;
             mauso = 6;
         };
+        Phanso(int tuso, int mauso){
+            this->tuso = tuso;
+            this->mauso = mauso;
+        }
         void setTuso(int tuso){
             this->tuso = tuso;
         }

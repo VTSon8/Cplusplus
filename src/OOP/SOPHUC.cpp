@@ -10,6 +10,10 @@ class Sophuc{
             phanthuc = 1;
             phanao = 2;
         };
+        Sophuc(int phanthuc, int phanao){
+            this->phanthuc = phanthuc;
+            this->phanao = phanao;
+        }
         // setter,getter
         void setPhanThuc(int phanthuc){
             this->phanthuc = phanthuc;
