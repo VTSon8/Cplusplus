@@ -1,6 +1,6 @@
 // size
 // elements
-// push(), pop(), empty(), full().
+// push(), pop(), empty(), full(), top()
 #include<iostream>
 using namespace std;
 class Stack{
@@ -13,6 +13,9 @@ class Stack{
         void push(int element);
         void pop();
         void print();
+        bool empty();
+        bool full();
+        int top();
 };
 Stack::Stack(){
     size = 0;
@@ -32,6 +35,15 @@ void Stack::pop(){
         size--;
     }
 }
+bool Stack::empty(){
+    return size == 0;
+}
+bool Stack::full(){
+    return size == MAX_SIZE;
+}
+int Stack::top(){
+    return elements[size-1];
+}
 void Stack::print(){
     for(int i=0;i<size;i++){
         cout<<elements[i]<<" ";
@@ -48,5 +60,7 @@ int main(){
     list.pop();
     list.pop();
     list.print();
+    cout<<list.full()<<" ";
+    cout<<list.top();
     return 0;
 }
