@@ -12,6 +12,7 @@ class Queue{
         void pop();
         bool empty();
         bool full();
+        int front();
 };
     Queue::Queue(){
     size = 0;
@@ -32,6 +33,9 @@ bool Queue::empty(){
 }
 bool Queue::full(){
     return size == MAX_SIZE;
+}
+int Queue::front(){
+    return elements[0];
 }
 int main(){
     return 0;
