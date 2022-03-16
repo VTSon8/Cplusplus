@@ -8,12 +8,16 @@ class Node{
         Node *next;// móc xích
         void setData(int data){ this->data = data;}
         int getData(){return this->data;}
+
 };
+// 3 4 4 3
+// 3 6 6 3
 class List{
     public:
         Node *head;
         List(){head = NULL;}
         void addNode(Node *node);
+        void update(int source, int des);
         void print();
 };
 void List::addNode(Node *node){
@@ -28,12 +32,21 @@ void List::addNode(Node *node){
         current->next = node;
     }
 }
-void List::print(){
+void List::update(int source, int des){
     Node *current = head;
     while(current){
-        cout<<current->getData()<<" ";
+        if(current->getData() == source){
+            current->setData(des);
+        }
         current = current->next;
     }
+}
+void List::print(){
+    Node *current = head;
+    // while(current){
+    //     cout<<current->getData()<<" ";
+    //     current = current->next;
+    // }
     // cách in 2
     for(Node *current = head; current!=NULL;current=current->next){
             cout<<current->getData()<<" ";
@@ -54,6 +67,7 @@ int main(){
     list.addNode(node2);
     list.addNode(node3);
     list.addNode(node4);
+    list.update(5,6);
     list.print();
     return 0;
 }
