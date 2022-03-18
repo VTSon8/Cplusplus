@@ -5,9 +5,19 @@ using namespace std;
 int fibo(int n);
 int main(){
     int n = 10;
-    for(int i=0; i<n; i++){
-        cout<<fibo(i)<<" ";
+    int x = 4;
+    bool tontai = false;
+    int i = 0;
+    int _fibo = 1;
+    while(_fibo<x){
+        _fibo = fibo(i); 
+        if(x==_fibo){
+            tontai = true;
+            break;
+        }
+        i++;
     }
+    cout<<tontai;
     return 0;
 }
 int fibo(int n){
