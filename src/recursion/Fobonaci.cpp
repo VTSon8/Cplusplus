@@ -8,10 +8,10 @@ int main(){
     int x = 4;
     bool tontai = false;
     int i = 0;
-    int _fibo = 1;
+    int _fibo = 1;// fibo = 1 (fibo dautien)
     while(_fibo<x){
-        _fibo = fibo(i); 
-        if(x==_fibo){
+        _fibo = fibo(i); // tim lai fibo
+        if(x==_fibo){// tim thay
             tontai = true;
             break;
         }
