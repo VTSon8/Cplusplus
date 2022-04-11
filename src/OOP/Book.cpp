@@ -2,6 +2,7 @@
 // - Danh sách Sách
 // + vector
 // viết theo hướng đối tượng
+#include<vector>
 #include<iostream>
 using namespace std;
 class Theloai{
@@ -83,7 +84,20 @@ class Sach{
             cout<<this->gia;
         }
 };
-
+class ThuVien{
+    private:
+        vector<Sach> danhsachsach;
+    public:
+        void themSach(Sach sach){
+            danhsachsach.push_back(sach);          
+        }
+        int laySoLuong(){return danhsachsach.size();}
+        void xuat(){
+            for(int i=0; i<danhsachsach.size(); i++){
+                danhsachsach[i].xuat();
+            }
+        }
+};
 int main(){
     // khoi tao the loai
     Theloai theloai;
@@ -116,7 +130,9 @@ int main(){
     Sach sachA = Sach("001","Sach A",thanhnien, ngontinh,100);
     Sach sachB = Sach("002","Sach B",tienphong,trinhtham,110);
     Sach sachC = Sach("003","Sach C",gddt,tho,120);
-    sachA.xuat();
-    sachB.xuat();
-    sachC.xuat();
+    ThuVien thuvien;
+    thuvien.themSach(sachA);
+    thuvien.themSach(sachB);
+    thuvien.themSach(sachC);
+    thuvien.xuat();
 }
